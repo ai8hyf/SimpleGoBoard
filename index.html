@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hu-go</title>
+    <style>
+        .board-container{
+            position: relative;
+            margin: 0;
+            background-color: #d5a769;
+            padding: 0;
+            height: 570px;
+            width: 570px;
+        }
+        .board-bg{
+            height: 540px;
+            width: 540px;
+            position: absolute;
+            z-index: 1;
+            left: 15px;
+            top: 15px;
+        }
+        .board{
+            position: absolute;
+            height: 570px;
+            width: 570px;
+            z-index: 10;
+        }
+        .row{
+            display: block;
+            height: 30px;
+            z-index: 10;
+        }
+        .grid{
+            display: inline-block;
+            height: 26px;
+            width: 26px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0);
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+        }
+
+        .grid:hover{
+            background-color: rgba(128, 128, 128, 0.486);
+        }
+
+        .b-stone{
+            background-image: url("black.png");
+        }
+
+        .w-stone{
+            background-image: url("white.png");
+        }
+
+        .control{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <div class="board-container">
+        <img src="./board.png" alt="" class="board-bg">
+        <div class="board">
+
+        </div>
+    </div>
+
+    <div class="control">
+        <button onclick="changeMode('black')">Add Black</button>
+        <button onclick="changeMode('white')">Add White</button>
+        <button onclick="changeMode('remove')">Remove</button>
+    </div>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
