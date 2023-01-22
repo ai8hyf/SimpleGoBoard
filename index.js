@@ -1,5 +1,5 @@
 
-let mode = "black"
+let mode = "black" // black, white, remove
 let board = []
 
 function changeMode(m){
@@ -12,10 +12,11 @@ for(let j=0; j<19; j++){
     for(let i=0; i<19; i++){
         board[j].push("0")
         
-        $("#row-"+j).append("<div class='grid' data-x='"+i+"' data-y='"+j+"'></div>")
+        $("#row-"+j).append("<div class='grid' data-x='"+j+"' data-y='"+i+"'></div>")
     }
 }
 
+console.log("Game board initialized.")
 console.log(board)
 
 $(".grid").click(function(){
@@ -23,9 +24,7 @@ $(".grid").click(function(){
     let x = $(this).data("x")
     let y = $(this).data("y")
 
-    console.log(x + " " + y)
-
-    
+    console.log("New Move ("+mode+"): " + x + " " + y)
 
     if(mode == "remove"){
         $(this).removeClass("b-stone")
@@ -46,7 +45,7 @@ $(".grid").click(function(){
         board[x][y] = "W"
     }
 
-    // console.log(board)
+    console.log(board)
 })
 
 
